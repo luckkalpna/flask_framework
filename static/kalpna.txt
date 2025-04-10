@@ -1,0 +1,2 @@
+hello i am kalpna.txt file which is inside the static folder,
+thanks.
