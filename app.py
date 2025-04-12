@@ -20,11 +20,14 @@ def hello_world():
     todo = Todo(title="first title", desc="start investing in Stock Market")
     db.session.add(todo)
     db.session.commit()
-    return render_template("index.html")
+    allTodo = Todo.query.all()
+    return render_template("index.html", allTodo=allTodo)
     # return "<p>Hello, World!</p>"
 
-@app.route("/products")
+@app.route("/show")
 def products():
+    allTodo = Todo.query.all()  # for print all tables in databse
+    print(allTodo)
     return "<p>this is an products page</p>"
 
 if __name__ == "__main__":
